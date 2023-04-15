@@ -52,7 +52,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'file' => ['required', 'max:2000'], // set appropriate size limit for binary file
+            'photo' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -67,7 +70,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
+            'file' => $data['file'],
+            'photo' => $data['photo'],
         ]);
     }
 }
