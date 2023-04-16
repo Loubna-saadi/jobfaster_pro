@@ -84,7 +84,7 @@
                     company
                     <span class="underline"></span>
                 </button>
-                <form class="form form-signup">
+                <form class="form form-signup" method="POST" action="{{ route('registercomp') }}">
                     <h1>you are a company?</h1>
                     <div class="circle">
                         <img src="{{asset('images/default_prof.png')}}" alt="Profile picture">
