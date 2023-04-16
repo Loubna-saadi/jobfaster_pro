@@ -18,8 +18,11 @@ use App\Http\Controllers\CompanyController;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/company', function () {
+    return view('company');
+})->name('company');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/registrercomp',[CompanyController::class, 'store'])->name('registercomp');
+Route::post('/registrercomp', [CompanyController::class, 'store'])->name('registercomp');

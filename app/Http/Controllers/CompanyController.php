@@ -20,9 +20,9 @@ $validatedData = $request->validate([
     'speciality' => 'required|string',
     'address' => 'required|string',
     'email' => 'required|email|unique:companies',
-    'phone' => 'required|string',
-    'password' => 'required|string',
-    'photo' => 'nullable|string',
+    'phone' => 'required',
+    'password' => 'required',
+    'photo' => 'required',
 ]);
 
 // create a new company instance with the input data
@@ -39,7 +39,7 @@ $company = new Company([
 // save the company instance to the database
 $company->save();
 
-            return redirect()->route("home");
+            return redirect()->route("company");
         }
     }
 
