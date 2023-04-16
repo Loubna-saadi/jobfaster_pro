@@ -19,7 +19,11 @@
                 <form class="form form-login">
                     <h1>look for a job?</h1>
                     <div class="circle">
-                        
+                        <img src="{{asset('images/default_prof.png')}}" alt="Profile picture">
+                        <input type="file" id="profile-picture" name="photo" accept=".jpg,.jpeg,.png"
+                            style="display: none;">
+                        <button class="upload-btn" type="button"
+                            onclick="document.getElementById('profile-picture').click()">Upload</button>
                     </div>
                     <fieldset>
                         <div class="input-block"><label for="username">Username:</label><br>
