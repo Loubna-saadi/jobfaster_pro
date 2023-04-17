@@ -21,6 +21,13 @@ Route::get('/', function () {
 Route::get('/company', function () {
     return view('company');
 })->name('company');
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
+Route::get('/complogin', function () {
+    return view('complogin');
+})->name('complogin');
+
 
 Auth::routes();
 
