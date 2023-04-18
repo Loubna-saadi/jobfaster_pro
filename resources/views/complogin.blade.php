@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="{{ asset('css/company.css') }}">
     <meta charset="UTF-8">
@@ -17,84 +18,76 @@
         <li><a href="company.php">companies</a> </li>
         <li><a href="#0">jobs</a></li>
 
-    </ul>
-    <ul class="navbar-nav ms-auto">
-        @guest
-            @if (Route::has('login'))
-                <a href="{{ route('login') }}" id="user"><i class="bi bi-person-fill"></i>login</a>
-            @endif
-            {{-- @if (Route::has('register')) --}}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            {{-- @endif --}}
-        @else
-            <li class="nav-item dropdown" style="list-style: none">
-                <a id="navbarDropdown" class="a nav-link dropdown-toggle" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class="fa fa-user p-1"></i>
-                    {{ Auth::user()->name }}
-                </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"
-                        style="color:black">
-                        Profile
-                    </a>
-                    <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"
-                        style="color:black">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        @endguest
-    </ul>
-
-
-
-
 </nav>
+
 <body>
     <div class="choose">
         <a href="{{ url('/login') }}">user</a>
         <a href="{{ url('/complogin') }}">company</a>
     </div>
-     <div class="form-wrapper">
-                <button type="button" class="switcher switcher-signup">
-                    company
-                    <span class="underline"></span>
-                </button>
-                <form class="form form-signup">
-                    <h1>you are a company?</h1>
+    <div class="form-wrapper">
 
+        <form class="form form-signup" method="POST" action="{{ route('company.login') }}">
+            @csrf
+            <h1>login</h1>
 
-                        <fieldset>
-                            <fieldset>
-                                <legend>Please, enter your email and password for login.</legend>
-                                <div class="input-block">
-                                  <label for="login-email">E-mail</label><br>
-                                  <input id="login-email" type="email" required>
-                                </div>
-                                <div class="input-block">
-                                  <label for="login-password">Password</label><br>
-                                  <input id="login-password" type="password" required>
-                                </div>
-                              </fieldset>
-                              <button type="submit" class="btn-login">Login</button>
+            <fieldset>
+                <legend>Please, enter your email and password for login.</legend>
+                <div class="input-block">
+                    <label for="login-email">E-mail</label><br>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="input-block">
+                    <label for="login-password">Password</label><br>
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                        name="password" required autocomplete="current-password">
 
-              </form>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </fieldset>
+            <button type="submit" class="btn-login">Login</button>
+            <div class="row mb-3">
+                <div class="col-md-6 offset-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                            {{ old('remember') ? 'checked' : '' }}>
 
-
+                        <label class="form-check-label" for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
+                </div>
             </div>
 
-</div>
-</section>
+            <div class="row mb-0">
+                <div class="col-md-8 offset-md-4">
+
+
+                    @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    @endif
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+    </div>
+    </section>
 
 
 

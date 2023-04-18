@@ -27,9 +27,15 @@ Route::get('/test', function () {
 Route::get('/complogin', function () {
     return view('complogin');
 })->name('complogin');
-
+// Route::get('/login', function () {
+//     return view('login');
+// })->name('login');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/registrercomp', [CompanyController::class, 'store'])->name('registercomp');
+Route::post('/company/login', 'App\Http\Controllers\CompanyController@login')->name('company.login');
+
+
+
