@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,24 +38,21 @@ class CompanyController extends Controller
         // save the company instance to the database
         $company->save();
 
-        return redirect()->route("company");
+        return redirect()->route("homme");
     }
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
 
-        if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->route('/');
-        } else {
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ]);
+        if (Auth::guard('company')->attempt($request->only(['email','password']), $request->get('remember'))){
+            return redirect()->route("homme");
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return back()->withInput($request->only('email', 'remember'));
     }
+
 }

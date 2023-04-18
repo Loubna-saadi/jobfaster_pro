@@ -17,7 +17,7 @@ use App\Http\Controllers\CompanyController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('homme');
 Route::get('/company', function () {
     return view('company');
 })->name('company');
@@ -35,7 +35,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/registrercomp', [CompanyController::class, 'store'])->name('registercomp');
-Route::post('/company/login', 'App\Http\Controllers\CompanyController@login')->name('company.login');
+Route::post('/company/login', [CompanyController::class, 'login'])->name('company.login');
 
 
 
