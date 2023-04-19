@@ -40,8 +40,6 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('companyprof') }}"
-                        onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"
                         style="color:black">
                         Profile
                     </a>

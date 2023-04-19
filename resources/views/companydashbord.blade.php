@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-pic-container">
-                            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="sidebar-profile-pic">
+                            <img src="{{asset($company->photo)}}" alt="Profile Picture" class="sidebar-profile-pic">
                         </div>
                     </div>
                     <div class="col-md-9">
