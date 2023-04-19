@@ -21,22 +21,31 @@ class CompanyController extends Controller
             'email' => 'required|email|unique:companies',
             'phone' => 'required',
             'password' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image',
         ]);
 
-        // create a new company instance with the input data
-        $company = new Company([
-            'company_name' => $validatedData['company_name'],
-            'speciality' => $validatedData['speciality'],
-            'address' => $validatedData['address'],
-            'email' => $validatedData['email'],
-            'phone' => $validatedData['phone'],
-            'password' => Hash::make($validatedData['password']),
-            'photo' => $validatedData['photo'],
-        ]);
+        if($request->hasFile('photo')){
+            $request->validate([
+                'image'=>'mimes:png,jpg,jpeg,bmp'
+            ]);
 
-        // save the company instance to the database
-        $company->save();
+            $file=$request->photo;
+            $imageName="images/companies/".time()."_".$file->getClientOriginalName();
+            $file->move(public_path("images/companies"),$imageName);
+
+
+            $company = new Company([
+                'company_name' => $validatedData['company_name'],
+                'speciality' => $validatedData['speciality'],
+                'address' => $validatedData['address'],
+                'email' => $validatedData['email'],
+                'phone' => $validatedData['phone'],
+                'password' => Hash::make($validatedData['password']),
+                'photo' => $imageName,
+            ]);
+            $company->save();
+        }
+
 
         return redirect()->route("companyprofile");
     }
@@ -54,7 +63,7 @@ class CompanyController extends Controller
 
         return back()->withInput($request->only('email', 'remember'));
     }
-    
+
     public function Logout(){
         auth()->guard("company")->logout();
         return redirect()->route("homme");

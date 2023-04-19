@@ -65,15 +65,15 @@
         <a href="{{ url('/register') }}">user</a>
         <a href="{{ url('/company') }}">company</a>
     </div>
-    <form class="form form-signup" method="POST" action="{{ route('registercomp') }}">
+    <form class="form form-signup" method="POST" action="{{ route('registercomp') }}" enctype="multipart/form-data">
         @csrf
         <h1>you are a company?</h1>
         <div class="circle">
             <img src="{{ asset('images/default_prof.png') }}" alt="Profile picture">
-            <input type="file" id="profile-picture" name="photo" accept=".jpg,.jpeg,.png"
+            <input type="file" id="photo" name="photo" required
                 style="display: none;">
             <button class="upload-btn" type="button"
-                onclick="document.getElementById('profile-picture').click()">Upload</button>
+                onclick="document.getElementById('photo').click()">Upload</button>
         </div>
         <fieldset>
             <fieldset>
