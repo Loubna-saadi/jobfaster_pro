@@ -38,7 +38,7 @@ class CompanyController extends Controller
         // save the company instance to the database
         $company->save();
 
-        return redirect()->route("homme");
+        return redirect()->route("companyprofile");
     }
 
     public function login(Request $request)
@@ -49,10 +49,14 @@ class CompanyController extends Controller
         ]);
 
         if (Auth::guard('company')->attempt($request->only(['email','password']), $request->get('remember'))){
-            return redirect()->route("homme");
+            return redirect()->route("companyprofile");
         }
 
         return back()->withInput($request->only('email', 'remember'));
     }
-
+    
+    public function Logout(){
+        auth()->guard("company")->logout();
+        return redirect()->route("homme");
+    }
 }
