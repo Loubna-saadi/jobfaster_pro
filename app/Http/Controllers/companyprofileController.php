@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class companyprofileController extends Controller
 {
-    public function show($id)
+    public function show()
     {
-        $company=Company::find($id);
+        $company = Company::first(); // Replace this with code to retrieve the correct company information
+
         return view('companydashbord', ['company' => $company]);
     }
 
