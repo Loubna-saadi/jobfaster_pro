@@ -45,8 +45,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/registrercomp', [CompanyController::class, 'store'])->name('registercomp');
 Route::post('/company/login', [CompanyController::class, 'login'])->name('company.login');
-Route::get('/company/profile', [companyprofileController::class, 'show'])->name('companyprof');
-
-
+Route::get('/company/profile/{id}', [companyprofileController::class, 'show'])->name('companyprof');
 
 
