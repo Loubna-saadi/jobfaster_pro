@@ -52,24 +52,17 @@ class CompanyController extends Controller
 
     public function login(Request $request)
     {
-        // validate the input data
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
         ]);
 
-        // check if the company is authenticated
-        if (Auth::guard('company')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            // if authenticated, redirect to the company profile page with the company id
-            return redirect()->route('companyprof', ['id' => Auth::guard('company')->user()->id]);
+        if (Auth::guard('company')->attempt($request->only(['email','password']), $request->get('remember'))){
+            return redirect()->route("companyprofile");
         }
 
-        // if not authenticated, redirect back with an error message
-        return redirect()->back()->withInput($request->only('email'))->withErrors([
-            'email' => 'Invalid email or password',
-        ]);
+        return back()->withInput($request->only('email', 'remember'));
     }
-
 
     public function Logout(){
         auth()->guard("company")->logout();
