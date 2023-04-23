@@ -1,8 +1,4 @@
-/* body {
-    background: #F9F8FD;
-    background-image: ;
-    font-family: 'Lexend Exa', sans-serif;
-} */
+
 body {
     /* background-image: url('/images/pic7.png'); */
     color: white;
@@ -11,13 +7,6 @@ body {
     background-color: #16113A;
 
 }
-
-
-/* .navbare {
-    display: flex;
-    align-items: center;
-} */
-
  nav {
     position: absolute;
     top: 6%;
@@ -137,13 +126,16 @@ ul li ul li a {
 .prof {
     position: absolute;
     left: 65%;
-    top: 20%;
+    top: 30%;
 }
 .container {
     position: absolute;
-    top: 20%;
+    top: 23%;
     left: 2%;
     font: italic 1.2em "Fira Sans"
+}
+a#user{
+   margin-top: 12px;
 }
 /* Style for the container */
 .container {
@@ -168,18 +160,6 @@ ul li ul li a {
     position: relative; /* add this to make the underline work */
   }
 
-  /* Style for the underline */
-  h3.two::after {
-    content: "";
-    display: block;
-    height: 4px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to left, #16113A, #1bafaf); /* change this to the color you want */
-  }
-
 .subscribe_barre{
 
     padding: 15px;
@@ -190,7 +170,6 @@ ul li ul li a {
     border-radius: 30px;
     color: gray;
 }
-
 
 button {
     position: relative;

@@ -31,9 +31,9 @@ Route::get('/companydashbord', function () {
     return view('companydashbord');
 })->name('companydashbord');
 
-Route::get('/companyprofile', function () {
-    return view('companyprofile');
-})->name('companyprofile')->middleware('auth:company');
+Route::get('/companyhome', function () {
+    return view('companyhome');
+})->name('companyhome')->middleware('auth:company');
 
 Route::get('/company/logout', [CompanyController::class, 'Logout'])->name('company.logout');
 // Route::get('/login', function () {
