@@ -1,0 +1,99 @@
+body{
+    background-color: #007bff;
+}
+
+
+
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .sidebar .nav-link.active {
+    color: #007bff;
+  }
+
+  .sidebar .nav-link:hover {
+    color: #007bff;
+  }
+
+  .sidebar-profile-pic {
+    width: 100%;
+    text-align: center;
+    /* margin-top: 32px; */
+  }
+
+  .sidebar-profile-pic img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+/* Main Content */
+.container {
+    position: absolute;
+    top: -19px;
+    LEFT: 3%;
+}
+
+.sidebar {
+    position: sticky !important;
+    top: 0;
+    height: calc(100vh - 48px);
+    z-index: 100;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollbar width */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1);
+}
+
+
+
+
+  /* Sidebar Hover Effect */
+  .sidebar .nav-link:hover {
+    color: #fff;
+    background-color: #007bff;
+  }
+
+
+.card {
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width:169%;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: #ddd;
+}
+
+table {
+    margin-top: 20px;
+}
+
+table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+table td {
+    vertical-align: middle;
+}

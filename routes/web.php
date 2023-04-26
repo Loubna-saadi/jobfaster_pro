@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\JobOfferController;
 use App\Http\Controllers\companyprofileController;
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,12 @@ Route::get('/company', function () {
 Route::get('/test', function () {
     return view('test');
 })->name('test');
+
+Route::get('/joboffers', function () {
+    return view('joboffers');
+})->name('joboffers');
+
+
 Route::get('/complogin', function () {
     return view('complogin');
 })->name('complogin');
@@ -46,7 +53,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/registrercomp', [CompanyController::class, 'store'])->name('registercomp');
 Route::post('/company/login', [CompanyController::class, 'login'])->name('company.login');
 Route::get('/company/profile', [companyprofileController::class, 'show'])->name('companyprof');
-
-
-
-
+Route::post('/company/profile/update', [companyProfileController::class, 'update'])->name('company.profile.update');
+// Route::get('/company/joboffers', [CompanyController::class, 'jobOffers'])->name('company.joboffers');
+Route::get('/joboffers', [JobOfferController::class, 'index'])->name('joboffers.index');
+Route::post('/company/joboffers', [JobOfferController::class, 'store'])->name('joboffers.store');
+Route::get('/joboffers', [JobOfferController::class, 'index'])->name('joboffers');

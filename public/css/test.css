@@ -285,7 +285,9 @@ h1 {
     overflow: hidden;
     width: 500px;
     height: fit-content;
-    margin-top: 80px;
+   position: absolute;
+   top: 200px;
+   right: 650px;
     padding: 30px 25px;
     border-radius: 41px;
     transform-origin: top;
@@ -498,4 +500,13 @@ h1 {
 }
 h1{
     color:#16113A;
+}
+.choose
+{
+    margin-left: 300px;
+}
+.choose a
+{
+    margin-left: 180px;
+
 }

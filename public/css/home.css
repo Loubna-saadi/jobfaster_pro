@@ -135,7 +135,10 @@ ul li ul li a {
     font: italic 1.2em "Fira Sans"
 }
 a#user{
-   margin-top: 12px;
+    position: absolute;
+    top: 20px;
+    /* left: 416px; */
+    right: 176px
 }
 /* Style for the container */
 .container {

@@ -47,7 +47,7 @@ class CompanyController extends Controller
         }
 
 
-        return redirect()->route("companyhome");
+        return redirect()->route("complogin");
     }
 
     public function login(Request $request)
