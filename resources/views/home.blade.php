@@ -41,15 +41,13 @@
                     <a id="navbarDropdown" class="a nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="fa fa-user p-1"></i>
-                        {{ Auth::guard('company')->user()->company_name }}
+                        {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"
-                            style="color:black">
-                            Profile
-                        </a>
+                        <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('userprof') }}"
+                        style="color:black">
+                        Profile
+                    </a>
                         <a style="margin-top:5px;color:black" class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"

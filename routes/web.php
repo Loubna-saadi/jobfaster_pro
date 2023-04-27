@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobOfferController;
 use App\Http\Controllers\companyprofileController;
@@ -30,6 +31,9 @@ Route::get('/joboffers', function () {
     return view('joboffers');
 })->name('joboffers');
 
+// Route::get('/userprof', function () {
+//     return view('userprof');
+// })->name('userprof');
 
 Route::get('/complogin', function () {
     return view('complogin');
@@ -58,3 +62,9 @@ Route::post('/company/profile/update', [companyProfileController::class, 'update
 Route::get('/joboffers', [JobOfferController::class, 'index'])->name('joboffers.index');
 Route::post('/company/joboffers', [JobOfferController::class, 'store'])->name('joboffers.store');
 Route::get('/joboffers', [JobOfferController::class, 'index'])->name('joboffers');
+Route::delete('/joboffers/{id}', [JobOfferController::class, 'destroy'])->name('joboffers.destroy');
+Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.profile')->middleware('auth');
+Route::get('/user/profile', [UserController::class, 'userProfile'])->name('userprof');
+Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
+Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+

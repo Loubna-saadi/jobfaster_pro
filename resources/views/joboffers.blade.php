@@ -9,6 +9,7 @@
     <title>Add Job Offer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('joboffers.css') }}">
+
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            Settings
+                            job requests
                         </a>
                     </li>
                     <li class="nav-item">
@@ -90,6 +91,7 @@
                                         <th>Description</th>
                                         <th>Location</th>
                                         <th>Salary</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,11 +101,15 @@
                                             <td>{{ $jobOffer->description }}</td>
                                             <td>{{ $jobOffer->requirements }}</td>
                                             <td>{{ $jobOffer->salary }}</td>
+                                            <td>
+                                                <form action="{{ route('joboffers.destroy', ['id' => $jobOffer->id]) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit">Delete</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
-
-
-
                                 </tbody>
                             </table>
                         </div>

@@ -38,7 +38,7 @@ body{
 
 .sidebar {
     position: sticky !important;
-    top: 0;
+    top: 100px;
     height: calc(100vh - 48px);
     z-index: 100;
     padding: 48px 0 0;
@@ -46,7 +46,7 @@ body{
 }
 
 .sidebar-sticky {
-    position: relative;
+    position: sticky !important;
     top: 0;
     height: calc(100vh - 48px);
     padding-top: .5rem;
@@ -76,7 +76,7 @@ body{
 
 .card-header {
     background-color: #007bff;
-    color: #fff;
+    color: black;
     font-weight: bold;
 }
 

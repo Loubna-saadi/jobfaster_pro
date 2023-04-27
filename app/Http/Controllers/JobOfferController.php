@@ -40,4 +40,15 @@ class JobOfferController extends Controller
 
         return redirect()->route('joboffers');
     }
+
+    public function destroy($id)
+    {
+        $jobOffer = JobOffer::find($id);
+        $jobOffer->delete();
+
+        return redirect('/joboffers');
+    }
+
+
+
 }
