@@ -72,15 +72,15 @@
         <div class="forms">
             <div class="form-wrapper is-active">
 
-                <form class="form form-login" method="POST" action="{{ route('register') }}">
+                <form class="form form-login" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
                     <h1>look for a job?</h1>
                     <div class="circle">
                         <img src="{{ asset('images/default_prof.png') }}" alt="Profile picture">
-                        <input type="file" id="profile-picture" name="photo" accept=".jpg,.jpeg,.png"
-                            style="display: none;">
+                        <input type="file" id="photo" name="photo"
+                            style="display: none;" required>
                         <button class="upload-btn" type="button"
-                            onclick="document.getElementById('profile-picture').click()">Upload</button>
+                            onclick="document.getElementById('photo').click()">Upload</button>
                     </div>
                     <fieldset>
                         <fieldset>

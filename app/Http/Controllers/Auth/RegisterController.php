@@ -6,8 +6,10 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -71,7 +73,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'file' => ['required', 'max:2000'], // set appropriate size limit for binary file
-            'photo' => ['required', 'string', 'max:255'],
+            'photo' => ['required', 'image'],
         ]);
     }
 
@@ -83,13 +85,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'password' => Hash::make($data['password']),
-            'file' => $data['file'],
-            'photo' => $data['photo'],
-        ]);
+        $photo = $data['photo'];
+        $imageName="images/companies/".time()."_".$photo->getClientOriginalName();
+        $photo->move(public_path("images/companies"),$imageName);
+
+
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'password' => Hash::make($data['password']),
+                'file' => $data['file'],
+                'photo' => $imageName,
+            ]);
     }
+
 }
