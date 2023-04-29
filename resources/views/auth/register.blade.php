@@ -77,7 +77,7 @@
                     <h1>look for a job?</h1>
                     <div class="circle">
                         <img src="{{ asset('images/default_prof.png') }}" alt="Profile picture">
-                        <input type="file" id="photo" name="photo"
+                        <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png"
                             style="display: none;" required>
                         <button class="upload-btn" type="button"
                             onclick="document.getElementById('photo').click()">Upload</button>

@@ -86,8 +86,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $photo = $data['photo'];
-        $imageName="images/companies/".time()."_".$photo->getClientOriginalName();
-        $photo->move(public_path("images/companies"),$imageName);
+        $imageName="images/users/".time()."_".$photo->getClientOriginalName();
+        $photo->move(public_path("images/users"),$imageName);
+
+        $file = $data['file'];
+        $filename="files/".time()."_".$file->getClientOriginalName();
+        $file->move(public_path("files"),$filename);
 
 
             return User::create([
@@ -95,7 +99,7 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'phone' => $data['phone'],
                 'password' => Hash::make($data['password']),
-                'file' => $data['file'],
+                'file' => $filename,
                 'photo' => $imageName,
             ]);
     }
