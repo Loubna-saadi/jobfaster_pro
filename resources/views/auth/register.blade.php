@@ -144,12 +144,7 @@
                     </fieldset>
                     <button type="submit" class="btn-login">Register</button>
                 </form>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit suscipit doloremque distinctio nobis,
-                    rem eum laudantium veniam dolorum, delectus consequatur qui tempore ea ad dolorem ducimus voluptatem
-                    vero illum harum?</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit suscipit doloremque distinctio nobis,
-                        rem eum laudantium veniam dolorum, delectus consequatur qui tempore ea ad dolorem ducimus voluptatem
-                        vero illum harum?</p>
+                
             </div>
 </body>
 
