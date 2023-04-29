@@ -72,7 +72,8 @@
         <div class="forms">
             <div class="form-wrapper is-active">
 
-                <form class="form form-login" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                <form class="form form-login" method="POST" action="{{ route('register') }}"
+                    enctype="multipart/form-data">
                     @csrf
                     <h1>look for a job?</h1>
                     <div class="circle">
@@ -86,8 +87,8 @@
                         <fieldset>
                             <div class="input-block">
                                 <input type="text" id="name" name="name" placeholder="Username"
-                                    class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
-                                    required autocomplete="name">
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name') }}" required autocomplete="name">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -143,6 +144,9 @@
                     </fieldset>
                     <button type="submit" class="btn-login">Register</button>
                 </form>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit suscipit doloremque distinctio nobis,
+                    rem eum laudantium veniam dolorum, delectus consequatur qui tempore ea ad dolorem ducimus voluptatem
+                    vero illum harum?</p>
             </div>
 </body>
 
