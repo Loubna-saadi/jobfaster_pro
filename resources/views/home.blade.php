@@ -23,7 +23,7 @@
             <li><a href="{{ url('/about') }}">About</a></li>
             <li><a href="#0">employees</a></li>
             <li><a href="company.php">companies</a> </li>
-            <li><a href="#0">jobs</a></li>
+            <li><a href="{{ url('/jobs') }}">jobs</a></li>
 
         </ul>
         <ul class="navbar-nav ms-auto">

@@ -1,22 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\JobOffer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class JobOfferController extends Controller
 {
-    //
-    // public function jobOffers()
-    // {
-    //     $company = auth()->guard('company')->user();
-    //     $jobOffers = JobOffer::where('company_id', $company->id)->get();
-    //     echo "Job offers found: ".count($jobOffers);
-    //     return view('company.joboffers', compact('company', 'jobOffers'));
-
-    // }*
+    
 
     public function index()
 {
@@ -24,7 +15,11 @@ class JobOfferController extends Controller
     $jobOffers = JobOffer::where('company_id', $company->id)->get();
     return view('joboffers', compact('jobOffers'));
 }
-
+public function showall()
+    {
+        $jobs = JobOffer::all();
+        return view('jobs', compact('jobs'));
+    }
 
     public function store(Request $request)
     {

@@ -31,9 +31,9 @@ Route::get('/joboffers', function () {
     return view('joboffers');
 })->name('joboffers');
 
-// Route::get('/userprof', function () {
-//     return view('userprof');
-// })->name('userprof');
+Route::get('/jobs', function () {
+    return view('jobs');
+})->name('jobs');
 
 Route::get('/complogin', function () {
     return view('complogin');
@@ -67,4 +67,6 @@ Route::get('/user/profile', [UserController::class, 'userProfile'])->name('user.
 Route::get('/user/profile', [UserController::class, 'userProfile'])->name('userprof');
 Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
 Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
+Route::get('/jobs', [JobOfferController::class, 'showall'])->name('jobs.showall');
+
 
