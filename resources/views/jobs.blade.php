@@ -40,7 +40,22 @@
                         </td>
                         <td>{{ $job->salary }}</td>
                         <td>{{ $job->company->company_name }}</td>
-                        <td><a href="" class="btn btn-primary">apply</a></td>
+
+                         @if(Auth::check())
+            @php
+                $application = \App\Models\Application::where('user_id', auth()->user()->id)->where('job_id', $job->id)->first();
+            @endphp
+            <td>
+                @if($application)
+                    <button class="btn btn-success" disabled>Applied Successfully</button>
+                @else
+                    <a href="{{ route('apply', ['job' => $job->id]) }}" class="btn btn-primary">Apply</a>
+                @endif
+            </td>
+        @else
+            <td><a href="{{ route('login') }}" class="btn btn-primary">Apply</a></td>
+        @endif
+
                     </tr>
                 @endforeach
             </tbody>

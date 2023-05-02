@@ -42,6 +42,10 @@ Route::get('/companydashbord', function () {
     return view('companydashbord');
 })->name('companydashbord');
 
+Route::get('/applications', function () {
+    return view('applications');
+})->name('applications');
+
 Route::get('/companyhome', function () {
     return view('companyhome');
 })->name('companyhome')->middleware('auth:company');
@@ -68,5 +72,7 @@ Route::get('/user/profile', [UserController::class, 'userProfile'])->name('userp
 Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
 Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 Route::get('/jobs', [JobOfferController::class, 'showall'])->name('jobs.showall');
+Route::get('/apply/{job}', [JobOfferController::class, 'apply'])->name('apply');
+
 
 

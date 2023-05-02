@@ -27,8 +27,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Settings
+                            <a class="nav-link" href="{{ url('/applications') }}">
+                                applications
                             </a>
                         </li>
                         <li class="nav-item">
@@ -91,7 +91,7 @@
                     </div>
 
 
-          
+
 
                 </div>
 
