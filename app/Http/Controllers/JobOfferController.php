@@ -65,4 +65,14 @@ class JobOfferController extends Controller
 
         return redirect()->back()->with('success', 'Your application has been submitted successfully!');
     }
+    public function showApplications($jobOfferId)
+    {
+        // Retrieve the job offer and its associated applications
+        $jobOffer = JobOffer::findOrFail($jobOfferId);
+    $applications = Application::where('job_id', $jobOfferId)->get();
+
+        // Pass the job offer and applications to the view
+        return view('applications', compact('jobOffer', 'applications'));
+    }
+
 }

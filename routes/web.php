@@ -73,6 +73,8 @@ Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profi
 Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 Route::get('/jobs', [JobOfferController::class, 'showall'])->name('jobs.showall');
 Route::get('/apply/{job}', [JobOfferController::class, 'apply'])->name('apply');
+Route::get('/joboffers/{job_id}/applications', [JobOfferController::class, 'showApplications'])->name('joboffers.applications');
+
 
 
 
