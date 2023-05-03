@@ -69,6 +69,21 @@
                                     <label for="salary">salary</label>
                                     <textarea class="form-control" id="salary" name="salary"></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <input type="text" class="form-control" id="location" name="location">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="type_of_job">Type of job</label>
+                                    <select class="form-control" id="type_of_job" name="type_of_job">
+                                        <option value="Full time job">Full time job</option>
+                                        <option value="Part time job">Part time job</option>
+                                        <option value="Internship">Internship</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Freelance">Freelance</option>
+                                        </select>
+                                        </div>
 
                                 <button type="submit" class="btn btn-primary">Add Job Offer</button>
                             </form>
@@ -90,6 +105,8 @@
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Location</th>
+                                        <th>location</th>
+                                        <th>type_of_job</th>
                                         <th>Salary</th>
                                         <th>Actions</th>
                                     </tr>
@@ -100,6 +117,8 @@
                                             <td>{{ $jobOffer->title }}</td>
                                             <td>{{ $jobOffer->description }}</td>
                                             <td>{{ $jobOffer->requirements }}</td>
+                                            <td>{{ $jobOffer->location }}</td>
+                                            <td>{{ $jobOffer->type_of_job }}</td>
                                             <td>{{ $jobOffer->salary }}</td>
                                             <td>
                                                 <form action="{{ route('joboffers.destroy', ['id' => $jobOffer->id]) }}" method="POST">

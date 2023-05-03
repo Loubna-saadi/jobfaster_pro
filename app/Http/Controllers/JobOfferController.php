@@ -34,6 +34,8 @@ class JobOfferController extends Controller
         $jobOffer->description = $request->input('description');
         $jobOffer->requirements = $request->input('requirements');
         $jobOffer->salary = $request->input('salary');
+        $jobOffer->location = $request->input('location');
+        $jobOffer->type_of_job = $request->input('type_of_job');
         $jobOffer->company_id = $company->id;
         $jobOffer->save();
 

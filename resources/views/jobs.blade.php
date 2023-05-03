@@ -69,8 +69,11 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Requirements</th>
+                    <th>location</th>
+                    <th>type of job</th>
                     <th>Salary</th>
                     <th>Company</th>
+                    <th>action</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,6 +91,8 @@
                             <p class="job-requirements">{{ $job->requirements }}</p>
                             <button class="toggle-requirements">Show More</button>
                         </td>
+                        <td>{{ $job->location }}</td>
+                        <td>{{ $job->type_of_job}}</td>
                         <td>{{ $job->salary }}</td>
                         <td>{{ $job->company->company_name }}</td>
 
