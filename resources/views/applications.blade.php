@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="sidebar">
+    {{-- <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active" href="{{ url('/company/profile') }}">
@@ -34,34 +34,39 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </div> --}}
     <div class="container">
-        <div class="main">
-            <h1>All Job Offer Applications</h1>
-            <h2>{{ $jobOffer->title }}</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>CV</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($applications as $application)
-                        <tr>
-                            <td>{{ $application->name }}</td>
-                            <td>{{ $application->email }}</td>
-                            <td><a href="{{ url('/storage/' . $application->cv) }}">Download</a></td>
-                            <td>{{ $application->status }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+        <h1>Applications for Job </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User</th>
+                    <th>Job Title</th>
+                    <th>CV</th>
+                    <th>Date Applied</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($applications as $application)
+                <tr>
+                    <td>{{ $application->id }}</td>
+                    <td>{{ $application->user->name }}</td>
+                    <td>{{ $application->title }}</td>
+
+                    <td><a href="{{ Storage::url($application->cv) }}">{{ $application->cv }}</a></td>
+                    <td>{{ $application->created_at->format('m/d/Y') }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+
 
     </div>
+
+
 
 </body>
 

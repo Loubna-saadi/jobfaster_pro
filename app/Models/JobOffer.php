@@ -14,6 +14,11 @@ class JobOffer extends Model
     {
         return $this->belongsTo(\App\Models\Company::class);
     }
+    
+    public function applications()
+{
+    return $this->hasMany(\App\Models\Application::class);
+}
 }
 
 

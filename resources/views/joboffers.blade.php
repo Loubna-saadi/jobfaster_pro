@@ -28,8 +28,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            job requests
+                        <a class="nav-link" href="{{ url('/applications') }}">
+                            applications
                         </a>
                     </li>
                     <li class="nav-item">

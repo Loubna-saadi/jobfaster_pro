@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\JobOfferController;
 use App\Http\Controllers\companyprofileController;
+use App\Http\Controllers\ApplicationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,9 +43,9 @@ Route::get('/companydashbord', function () {
     return view('companydashbord');
 })->name('companydashbord');
 
-Route::get('/applications', function () {
-    return view('applications');
-})->name('applications');
+// Route::get('/applications', function () {
+//     return view('applications');
+// })->name('applications');
 
 Route::get('/companyhome', function () {
     return view('companyhome');
@@ -73,7 +74,11 @@ Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profi
 Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
 Route::get('/jobs', [JobOfferController::class, 'showall'])->name('jobs.showall');
 Route::get('/apply/{job}', [JobOfferController::class, 'apply'])->name('apply');
-Route::get('/joboffers/{job_id}/applications', [JobOfferController::class, 'showApplications'])->name('joboffers.applications');
+// Route::get('/joboffers/{job_id}/applications', [ApplicationController::class, 'showApplications'])->name('joboffers.applications');
+// Route::get('/joboffers/{job_id}/applications', [ApplicationController::class, 'showApplications'])->name('applications.show');
+Route::get('/applications', [ApplicationController::class, 'showApplications'])->name('applications.show');
+
+
 
 
 
