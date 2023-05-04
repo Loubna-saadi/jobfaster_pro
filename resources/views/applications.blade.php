@@ -11,7 +11,7 @@
 
 <body>
 
-    {{-- <div class="sidebar">
+    <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active" href="{{ url('/company/profile') }}">
@@ -34,7 +34,7 @@
                 </a>
             </li>
         </ul>
-    </div> --}}
+    </div>
     <div class="container">
         <h1>Applications for Job </h1>
 
@@ -50,24 +50,18 @@
             </thead>
             <tbody>
                 @foreach ($applications as $application)
-                <tr>
-                    <td>{{ $application->id }}</td>
-                    <td>{{ $application->user->name }}</td>
-                    <td>{{ $application->title }}</td>
+                    <tr>
+                        <td>{{ $application->id }}</td>
+                        <td>{{ $application->user->name }}</td>
+                        <td>{{ $application->title }}</td>
 
-                    <td><a href="{{ Storage::url($application->cv) }}">{{ $application->cv }}</a></td>
-                    <td>{{ $application->created_at->format('m/d/Y') }}</td>
-                </tr>
+                        <td><a href="{{ Storage::url($application->cv) }}">{{ $application->cv }}</a></td>
+                        <td>{{ $application->created_at->format('m/d/Y') }}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
 
-
-
     </div>
-
-
-
 </body>
-
 </html>

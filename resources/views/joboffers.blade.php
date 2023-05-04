@@ -14,7 +14,7 @@
 
 <body>
     <div class="row">
-        <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+        <nav class="sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
