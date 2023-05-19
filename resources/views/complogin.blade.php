@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{ asset('css/company.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/complogin.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,12 +17,12 @@
     </div>
     <div class="form-wrapper">
 
-        <form class="form form-signup" method="POST" action="{{ route('company.login') }}">
+        <form class="form form-login" method="POST" action="{{ route('company.login') }}">
             @csrf
-            <h1>login</h1>
+            <h1>company login</h1>
+{{--
 
-            <fieldset>
-                <legend>Please, enter your email and password for login.</legend>
+                <legend>Please, enter your email and password for login.</legend> --}}
                 <div class="input-block">
                     <label for="login-email">E-mail</label><br>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -44,7 +44,7 @@
                         </span>
                     @enderror
                 </div>
-            </fieldset>
+
             <button type="submit" class="btn-login">Login</button>
             <div class="row mb-3">
                 <div class="col-md-6 offset-md-4">
@@ -62,12 +62,12 @@
             <div class="row mb-0">
                 <div class="col-md-8 offset-md-4">
 
-
+{{--
                     @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
-                    @endif
+                    @endif --}}
                 </div>
             </div>
 

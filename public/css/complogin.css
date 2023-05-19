@@ -122,22 +122,11 @@ ul li ul li {
     right: 171px;
 }
 
-@keyframes slide-in {
-    0% {
-        top: -50px;
-    }
 
-    40% {
-        top: 20px;
-    }
 
-    70% {
-        top: 10px;
-    }
-}
-/*
-fin nave
-*/
+
+
+
    /* Styles for forms-section */
    .forms-section {
     display: flex;
@@ -148,13 +137,14 @@ fin nave
 }
 
 h1 {
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 /* Styles for forms */
-.forms {
+.form {
     position: absolute;
     top: 200px;
+    left: 450px;
     background-color: #fff;
     color: #16113A;
     padding: 20px;
@@ -220,7 +210,6 @@ h1 {
     text-decoration: none;
     margin-left: 10px;
 }
-
 .choose
 {
     position: absolute;
@@ -233,3 +222,4 @@ h1 {
     color: white;
 
 }
+

@@ -195,4 +195,55 @@ button {
     color: #fff;
     cursor: pointer;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    min-height: calc(100% - 70px); /* Adjust the height based on your footer height */
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    color: #333;
+    flex-shrink: 0;
+    margin-top: 60px;
+
+}
+.foot{
+    position: relative;
+    left: 100px;
+}
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .social-media li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer .social-media li a {
+    color: #333;
+    font-size: 20px;
+}
+
+.footer .social-media li a:hover {
+    color: #555;
+}
 

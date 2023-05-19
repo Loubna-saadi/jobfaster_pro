@@ -22,20 +22,23 @@
                     @csrf
                     <h1>login</h1>
 
-                    <fieldset>
-                        <legend>Please, enter your email and password for login.</legend>
+                        {{-- <legend>Please, enter your email and password for login.</legend> --}}
                         <div class="input-block">
                             <label for="login-email">E-mail</label><br>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email"
+                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                value="{{ old('email') }}" required autocomplete="email" autofocus>
                             @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="input-block">
                             <label for="login-password">Password</label><br>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="current-password">
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -43,12 +46,12 @@
                                 </span>
                             @enderror
                         </div>
-                    </fieldset>
                     <button type="submit" class="btn-login">Login</button>
                     <div class="row mb-3">
                         <div class="col-md-6 offset-md-4">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember Me') }}
@@ -61,11 +64,11 @@
                         <div class="col-md-8 offset-md-4">
 
 
-                            @if (Route::has('password.request'))
+                            {{-- @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
-                            @endif
+                            @endif --}}
                         </div>
                     </div>
                 </form>

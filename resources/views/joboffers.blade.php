@@ -82,8 +82,8 @@
                                         <option value="Internship">Internship</option>
                                         <option value="Contract">Contract</option>
                                         <option value="Freelance">Freelance</option>
-                                        </select>
-                                        </div>
+                                    </select>
+                                </div>
 
                                 <button type="submit" class="btn btn-primary">Add Job Offer</button>
                             </form>
@@ -92,53 +92,55 @@
                 </div>
             </div>
             <div class="row justify-content-center mt-5">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            Job Offers
-                        </div>
 
-                        <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Description</th>
-                                        <th>Location</th>
-                                        <th>location</th>
-                                        <th>type_of_job</th>
-                                        <th>Salary</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($jobOffers as $jobOffer)
-                                        <tr>
-                                            <td>{{ $jobOffer->title }}</td>
-                                            <td>{{ $jobOffer->description }}</td>
-                                            <td>{{ $jobOffer->requirements }}</td>
-                                            <td>{{ $jobOffer->location }}</td>
-                                            <td>{{ $jobOffer->type_of_job }}</td>
-                                            <td>{{ $jobOffer->salary }}</td>
-                                            <td>
-                                                <form action="{{ route('joboffers.destroy', ['id' => $jobOffer->id]) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+               <h1>  Job Offers</h1>
+
+
+
+                <div class="card-body">
+                    @foreach ($jobOffers as $job)
+                        <div class="job-offer">
+                            <div class="job-offer-header">
+                                <div class="profile-pic-container">
+                                    <img src="{{ asset($job->company->photo) }}" alt="Profile Picture"
+                                        class="sidebar-profile-pic">
+                                </div>
+                                <h2>{{ $job->title }}</h2>
+                            </div>
+                            <div class="job-offer-content">
+                                <div class="job-details">
+                                    <p><strong>Location:</strong> {{ $job->location }}</p>
+                                    <p><strong>Type of Job:</strong> {{ $job->type_of_job }}</p>
+                                    <p><strong>Salary:</strong> {{ $job->salary }}</p>
+                                    <p><strong>Company:</strong> {{ $job->company->company_name }}</p>
+                                </div>
+                                <div class="job-description">
+                                    <h3>Description</h3>
+                                    <p>{{ $job->description }}</p>
+                                </div>
+                                <div class="job-requirements">
+                                    <h3>Requirements</h3>
+                                    <p>{{ $job->requirements }}</p>
+                                </div>
+                            </div>
+                            <div class="job-offer-footer">
+                                <form action="{{ route('joboffers.destroy', ['id' => $job->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
+
                 </div>
+
             </div>
         </div>
 
     </div>
 </body>
+<script src="{{ asset('js/jobs.js') }}"></script>
 
 </html>
 ``
