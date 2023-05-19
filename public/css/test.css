@@ -1,3 +1,4 @@
+
 body {
     /* background-image: url('/images/pic7.png'); */
     color: white;
@@ -6,13 +7,6 @@ body {
     background-color: #16113A;
 
 }
-
-
-/* .navbare {
-    display: flex;
-    align-items: center;
-} */
-
  nav {
     position: absolute;
     top: 6%;
@@ -27,7 +21,7 @@ body {
     justify-content: center;
     vertical-align: bottom;
     /* padding: 10px; */
-    width: 1100px;
+    width: 1222px;
 }
 
 ul {
@@ -52,13 +46,23 @@ li {
 }
 
 a {
-    color: #2375D8;
+    color: #7A7879;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.2s;
     list-style: none;
 
+
 }
+
+.nav-link {
+    position: relative;
+    top: 24px;
+    right: -59px;
+}
+
+
+
 .logo {
     color: #333; /* fallback color */
 background-image: linear-gradient(to right, #16113A, #1bafaf);
@@ -72,33 +76,6 @@ font-family: 'Arial', sans-serif;
 
 }
 
-ul ul {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    display: block;
-    margin: 12px -12px;
-    padding: 0;
-    background: #FFA91B;
-    border: 2px solid #F7C833;
-    border-right: 2px solid #F89329;
-    border-bottom: 2px solid #F89329;
-    border-radius: 5px;
-    transition: opacity 0.2s, visibility 0.2s;
-    list-style: none;
-}
-
-li:hover {
-    background-image: linear-gradient(to right, #16113A, #1bafaf);
-    border: 2px solid turquoise;
-    border-radius: 20PX;
-    color: white;
-
-}
-
-a:hover {
-    color: #F9F8FD;
-}
 
 ul li:hover>ul {
     visibility: visible;
@@ -112,8 +89,37 @@ ul li ul li {
     line-height: 1.7;
 }
 
-ul li ul li a {
-    color: #F9F8FD;
+
+.navies{
+    margin-top: 12px;
+}
+.navies li:hover {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .navies li:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; /* Adjust the distance of the point from the list item */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px; /* Adjust the width of the point */
+    height: 5px; /* Adjust the height of the point */
+    background-color: #2D66FE; /* Adjust the color of the point */
+    border-radius: 50%;
+    color: black;
+    font-weight: bold;
+  }
+  a:hover {
+    color: black;
+    font-weight: bold;
+}
+  a#user{
+    position: absolute;
+    top: 25px;
+    /* left: 416px; */
+    right: 171px;
 }
 
 @keyframes slide-in {
@@ -137,12 +143,6 @@ fin nave
     display: inline-block;
     top: 20%;
 }
-/*form*/
-
-
-
-
-
 
 *,
 *::before,
@@ -163,122 +163,8 @@ h1 {
     top: -34px;
 }
 
-.forms-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.section-title {
-    font-size: 32px;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.forms {
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    /* align-items: flex-start;
-    margin-top: -34px;
-    background-color: rgba(128, 128, 128, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(128, 128, 128, 0.5);
-    border-radius: 20px; */
-  }
 
 
-.form-wrapper {
-    animation: hideLayer .3s ease-out forwards;
-}
-
-.form-wrapper.is-active {
-    animation: showLayer .3s ease-in forwards;
-}
-
-@keyframes showLayer {
-    50% {
-        z-index: 1;
-    }
-
-    100% {
-        z-index: 1;
-    }
-}
-
-@keyframes hideLayer {
-    0% {
-        z-index: 1;
-    }
-
-    49.999% {
-        z-index: 1;
-    }
-}
-
-.switcher {
-    position: relative;
-    cursor: pointer;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: inherit;
-    font-size: 16px;
-    letter-spacing: .5px;
-    color: #999;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    transform: translateX(0);
-    transition: all .3s ease-out;
-}
-
-.form-wrapper.is-active .switcher-login {
-    color: #fff;
-    transform: translateX(90px);
-}
-
-.form-wrapper.is-active .switcher-signup {
-    color: #fff;
-    transform: translateX(-90px);
-}
-
-.underline {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-    width: 100%;
-    height: 2px;
-}
-
-.underline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: inherit;
-    display: block;
-    width: inherit;
-    height: inherit;
-    background-color: currentColor;
-    transition: transform .2s ease-out;
-}
-
-.switcher-login .underline::before {
-    transform: translateX(101%);
-}
-
-.switcher-signup .underline::before {
-    transform: translateX(-101%);
-}
-
-.form-wrapper.is-active .underline::before {
-    transform: translateX(0);
-}
 
 .form {
 
@@ -291,6 +177,7 @@ h1 {
     padding: 30px 25px;
     border-radius: 41px;
     transform-origin: top;
+
 }
 
 .form-login {
@@ -314,62 +201,6 @@ h1 {
     100% {
         background-color: #fff;
         transform: translate(35%, -20px);
-    }
-}
-
-@keyframes hideLogin {
-    0% {
-        background-color: #fff;
-        transform: translate(35%, -20px);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        background: #d7e7f1;
-        transform: translate(40%, 10px);
-    }
-}
-
-.form-signup {
-    animation: hideSignup .3s ease-out forwards;
-}
-
-.form-wrapper.is-active .form-signup {
-    animation: showSignup .3s ease-in forwards;
-}
-
-@keyframes showSignup {
-    0% {
-        background: #d7e7f1;
-        transform: translate(-40%, 10px) scaleY(.8);
-    }
-
-    50% {
-        transform: translate(0, 0) scaleY(.8);
-    }
-
-    100% {
-        background-color: #fff;
-        transform: translate(-35%, -20px) scaleY(1);
-    }
-}
-
-@keyframes hideSignup {
-    0% {
-        background-color: #fff;
-        transform: translate(-35%, -20px) scaleY(1);
-    }
-
-    50% {
-        transform: translate(0, 0) scaleY(.8);
-    }
-
-    100% {
-        background: #d7e7f1;
-        transform: translate(-40%, 10px) scaleY(.8);
     }
 }
 
@@ -439,6 +270,7 @@ h1 {
     border-radius: 25px;
     border: none;
     transition: all .3s ease-out;
+
 }
 
 .form-wrapper.is-active .form [type='submit'] {
@@ -510,3 +342,4 @@ h1{
     margin-left: 180px;
 
 }
+

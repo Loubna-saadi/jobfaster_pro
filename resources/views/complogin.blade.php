@@ -8,17 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<nav>
-
-    <ul>
-        <li><a class="logo" href="#0">JobFaster</a></li>
-        <li><a href="#0">Home</a></li>
-        <li><a href="{{ url('/about') }}">About</a></li>
-        <li><a href="#0">employees</a></li>
-        <li><a href="company.php">companies</a> </li>
-        <li><a href="#0">jobs</a></li>
-
-</nav>
+@include('layouts.nav')
 
 <body>
     <div class="choose">

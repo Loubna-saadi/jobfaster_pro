@@ -1,218 +1,125 @@
 
-
-
-
-
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 body {
+    /* background-image: url('/images/pic7.png'); */
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #16113A;
+
+}
+ nav {
+    position: absolute;
+    top: 6%;
+    display: inline-block;
+    border: 2px solid #D8D8D8;
+    background-color: #D8D8D8;
+    border-radius: 30px;
+    animation: slide-in 1s ease-out;
+    position: absolute;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    vertical-align: bottom;
+    /* padding: 10px; */
+    width: 1222px;
+}
+
+ul {
+    display: flex;
+    flex: 1 1 auto;
     margin: 0;
-    font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-    background: #3b4465;
+    padding: 0 30px;
+    list-style-type: none;
+}
+
+li:not(:last-child) {
+    margin-right: 40px;
+}
+
+li {
+    border: 2px solid transparent;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background 0.2s;
+    list-style: none;
+}
+
+a {
+    color: #7A7879;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    list-style: none;
+
 
 }
 
-
-h1 {
+.nav-link {
     position: relative;
-    top: -34px;
+    top: 24px;
+    right: -59px;
 }
 
-.forms-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+
+.logo {
+    color: #333; /* fallback color */
+background-image: linear-gradient(to right, #16113A, #1bafaf);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+
 }
 
-.section-title {
-    font-size: 32px;
-    letter-spacing: 1px;
-    color: #fff;
+
+ul li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0px 3px 5px 2px #EBECF1;
 }
 
-.forms {
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    /* align-items: flex-start;
-    margin-top: -34px;
-    background-color: rgba(128, 128, 128, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(128, 128, 128, 0.5);
-    border-radius: 20px; */
-  }
-
-
-.form-wrapper {
-    animation: hideLayer .3s ease-out forwards;
+ul li ul li {
+    margin: -2px 0 0 -2px;
+    width: calc(100% - 20px);
+    line-height: 1.7;
 }
 
-.form-wrapper.is-active {
-    animation: showLayer .3s ease-in forwards;
+
+.navies{
+    margin-top: 12px;
 }
-
-@keyframes showLayer {
-    50% {
-        z-index: 1;
-    }
-
-    100% {
-        z-index: 1;
-    }
-}
-
-@keyframes hideLayer {
-    0% {
-        z-index: 1;
-    }
-
-    49.999% {
-        z-index: 1;
-    }
-}
-
-.switcher {
+.navies li:hover {
     position: relative;
     cursor: pointer;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
-    text-transform: uppercase;
-    font-family: inherit;
-    font-size: 16px;
-    letter-spacing: .5px;
-    color: #999;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    transform: translateX(0);
-    transition: all .3s ease-out;
-}
+  }
 
-.form-wrapper.is-active .switcher-login {
-    color: #fff;
-    transform: translateX(90px);
-}
-
-.form-wrapper.is-active .switcher-signup {
-    color: #fff;
-    transform: translateX(-90px);
-}
-
-.underline {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    overflow: hidden;
-    pointer-events: none;
-    width: 100%;
-    height: 2px;
-}
-
-.underline::before {
+  .navies li:hover::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: inherit;
-    display: block;
-    width: inherit;
-    height: inherit;
-    background-color: currentColor;
-    transition: transform .2s ease-out;
+    bottom: 4px; /* Adjust the distance of the point from the list item */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px; /* Adjust the width of the point */
+    height: 5px; /* Adjust the height of the point */
+    background-color: #2D66FE; /* Adjust the color of the point */
+    border-radius: 50%;
+    color: black;
+    font-weight: bold;
+  }
+  a:hover {
+    color: black;
+    font-weight: bold;
 }
-
-.switcher-login .underline::before {
-    transform: translateX(101%);
-}
-
-.switcher-signup .underline::before {
-    transform: translateX(-101%);
-}
-
-.form-wrapper.is-active .underline::before {
-    transform: translateX(0);
-}
-
-.form {
-
-    overflow: hidden;
-    width: 500px;
-    height: fit-content;
-    margin-top: 80px;
-    padding: 30px 25px;
-    border-radius: 41px;
-    transform-origin: top;
-}
-
-.form-login {
-    animation: hideLogin .3s ease-out forwards;
-}
-
-.form-wrapper.is-active .form-login {
-    animation: showLogin .3s ease-in forwards;
-}
-
-@keyframes showLogin {
-    0% {
-        background: #d7e7f1;
-        transform: translate(40%, 10px);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        background-color: #fff;
-        transform: translate(35%, -20px);
-    }
-}
-
-@keyframes hideLogin {
-    0% {
-        background-color: #fff;
-        transform: translate(35%, -20px);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        background: #d7e7f1;
-        transform: translate(40%, 10px);
-    }
-}
-
-.form-signup {
-    animation: hideSignup .3s ease-out forwards;
-}
-
-.form-wrapper.is-active .form-signup {
-    animation: showSignup .3s ease-in forwards;
-}
-
-@keyframes showSignup {
-    0% {
-        background: #d7e7f1;
-        transform: translate(-40%, 10px) scaleY(.8);
-    }
-
-    50% {
-        transform: translate(0, 0) scaleY(.8);
-    }
-
-    100% {
-        background-color: #fff;
-        transform: translate(-35%, -20px) scaleY(1);
-    }
+  a#user{
+    position: absolute;
+    top: 25px;
+    /* left: 416px; */
+    right: 171px;
 }
 
 @keyframes hideSignup {
@@ -356,3 +263,4 @@ h1 {
     opacity: 0;
     cursor: pointer;
 }
+
