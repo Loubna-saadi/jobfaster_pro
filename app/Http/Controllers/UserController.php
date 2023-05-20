@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //
+    public function showProfile($id)
+    {
+        $user = User::find($id);
+
+        return response()->json($user);
+    }
+
+
+
 
     public function userProfile()
     {

@@ -78,6 +78,9 @@ Route::get('/apply/{job}', [JobOfferController::class, 'apply'])->name('apply');
 // Route::get('/joboffers/{job_id}/applications', [ApplicationController::class, 'showApplications'])->name('applications.show');
 Route::get('/applications', [ApplicationController::class, 'showApplications'])->name('applications.show');
 
+// Route::get('/users/{id}/try',[UserController::class, 'showProfile'])->name('users.try');
+Route::get('/users/{id}', [UserController::class, 'showProfile'])->name('users.showProfile');
+
 
 
 

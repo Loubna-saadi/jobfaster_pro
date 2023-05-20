@@ -205,7 +205,7 @@ html, body {
     min-height: calc(100% - 70px); /* Adjust the height based on your footer height */
 }
 
-.footer {
+/* .footer {
     background-color: #f8f9fa;
     padding: 100px 0;
     color: #333;
@@ -245,5 +245,63 @@ html, body {
 
 .footer .social-media li a:hover {
     color: #555;
-}
+} */
 
+/* Footer Section */
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    background-color: #f8f9fa;
+    margin-top: 70px;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .cole{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-left: 65px;
+    margin-top: 20px;
+}
+footer h4{
+    font-weight:800;
+    font-size: 16px;
+    padding-bottom: 20px;
+    color: #2D66FE;
+}
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: #222;
+    width: 200px;
+}
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+
+}
+footer .follow i{
+    margin-top: 20px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+footer .follow i:hover,
+footer a:hover{
+    color: #088178;
+}
+footer .copyright{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+.follow{
+    margin-right: 50px;
+}

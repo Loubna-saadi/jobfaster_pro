@@ -35,6 +35,7 @@ class User extends Authenticatable
             return null;
         }
     }
+    
 
     /**
      * The attributes that should be hidden for serialization.
